@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Our Future Management — university platform for sharing study summaries" />
+  <title>Our Future Management | Student Summary Platform</title>
+  <link rel="icon" href="assets/logo-emblem.jpeg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="OurFutureManagement.css" />
+</head>
+<body>
+  <!-- Site header: brand + navigation (links swap when logged in) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" data-nav="home" aria-label="Our Future Management home">
+        <img
+          src="assets/logo-emblem.jpeg"
+          width="200"
+          height="56"
+          class="logo-img"
+          decoding="async"
+          alt="Our Future Management"
+        />
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Main">
+        <a href="#" data-nav="home">Home</a>
+        <a href="#" data-nav="home" class="nav-future" id="navFutureLink">Future hub</a>
+        <a href="#" data-nav="browse">Browse</a>
+        <span class="nav-guest" id="navGuest">
+          <a href="#" data-nav="login" class="btn btn-ghost">Sign in</a>
+          <a href="#" data-nav="register" class="btn btn-primary">Register</a>
+        </span>
+        <span class="nav-user hidden" id="navUser">
+          <a href="#" data-nav="upload">Upload</a>
+          <a href="#" data-nav="profile">Profile</a>
+          <button type="button" class="btn btn-ghost" id="logoutBtn">Logout</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Home / landing: purpose + CTA -->
+    <section id="page-home" class="page page-active" aria-labelledby="home-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">University study hub · Bahrain</p>
+          <p class="hero-tagline-ar" dir="rtl" lang="ar">إدارة مستقبلنا</p>
+          <h1 id="home-title">Notes and summaries, shared by students like you.</h1>
+          <p class="lead">
+            Upload PDF or Word summaries, browse by subject, and download what you need for exams and assignments.
+            Built for focus — clean layout, quick search, and your work stays on this device.
+          </p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary btn-lg" data-nav="register">Get started free</a>
+            <a href="#" class="btn btn-secondary btn-lg" data-nav="login">Sign in</a>
+            <a href="#" class="btn btn-ghost btn-lg" data-nav="browse">Explore library</a>
+          </div>
+          <p class="trust-line"><span class="trust-dot" aria-hidden="true"></span> For undergrads, grads, and faculty</p>
+        </div>
+        <aside class="hero-panel hero-panel--brand" aria-label="Brand">
+          <div class="hero-panel-inner">
+            <img
+              src="assets/logo-hero-lockup.png"
+              alt=""
+              class="hero-brand-lockup"
+              width="320"
+              height="280"
+              decoding="async"
+            />
+            <div class="hero-metrics-row">
+              <div class="hero-metric">
+                <span class="hero-metric-value" id="heroMetricFormats">PDF &amp; DOCX</span>
+                <span class="hero-metric-label">Supported formats</span>
+              </div>
+              <div class="hero-metric">
+                <span class="hero-metric-value" id="heroMetricCount">0</span>
+                <span class="hero-metric-label">Summaries in your library</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <ul class="feature-list">
+        <li class="feature-card">
+          <span class="feature-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3M12 15l4-4m-4 4L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l.62 2.48c.14.571.515 1.053 1.042 1.328.527.275 1.146.307 1.698.087L21 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <strong>Upload</strong>
+            <span class="feature-desc">Pick major and year folders, then add title, subject, and file.</span>
+          </div>
+        </li>
+        <li class="feature-card">
+          <span class="feature-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <strong>Browse</strong>
+            <span class="feature-desc">Open your major, then year (Year 1, Year 2…), then search and download.</span>
+          </div>
+        </li>
+        <li class="feature-card">
+          <span class="feature-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          <div>
+            <strong>Your profile</strong>
+            <span class="feature-desc">See your uploads count and keep your details up to date.</span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Future hub: trending, insights, quick actions (usable "Future" tools) -->
+      <section class="future-hub" id="future-hub" aria-labelledby="future-hub-title">
+        <div class="future-hub-intro">
+          <h2 id="future-hub-title">Your Future hub</h2>
+          <p class="muted">See what’s new, where the community is focused, and quick ways to keep building your study library.</p>
+        </div>
+        <div class="future-hub-grid">
+          <article class="future-card">
+            <h3 class="future-card-title">Trending this week</h3>
+            <p class="future-card-desc muted">Recently added summaries — jump straight into the library.</p>
+            <ul class="trending-list" id="trendingList"></ul>
+            <p class="future-empty muted hidden" id="trendingEmpty">No uploads in the last 7 days. Share a summary to start a trend.</p>
+          </article>
+          <article class="future-card">
+            <h3 class="future-card-title">Hot subjects</h3>
+            <p class="future-card-desc muted">Courses with the most shared materials right now.</p>
+            <ol class="hot-subjects" id="hotSubjectsList"></ol>
+            <p class="future-empty muted hidden" id="hotSubjectsEmpty">No subjects yet — uploads will appear here.</p>
+          </article>
+          <article class="future-card future-card--accent">
+            <h3 class="future-card-title">Next step</h3>
+            <p class="future-card-desc muted" id="futureNextStepText">
+              Create an account to upload and track your progress toward your next milestone.
+            </p>
+            <div class="future-card-actions" id="futureNextActions">
+              <a href="#" class="btn btn-primary" data-nav="register">Get started</a>
+              <a href="#" class="btn btn-secondary" data-nav="browse">Browse library</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- Login -->
+    <section id="page-login" class="page hidden" aria-labelledby="login-title">
+      <div class="card card-narrow card-elevated">
+        <p class="card-kicker">Welcome back</p>
+        <h1 id="login-title">Sign in</h1>
+        <p class="muted">Use the email and password you registered with.</p>
+        <form id="loginForm" class="stack" novalidate>
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" autocomplete="current-password" required />
+          </div>
+          <p class="form-error hidden" id="loginError" role="alert"></p>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+        <p class="muted small">No account? <a href="#" data-nav="register">Create one</a></p>
+      </div>
+    </section>
+
+    <!-- Register: student or professor -->
+    <section id="page-register" class="page hidden" aria-labelledby="register-title">
+      <div class="card card-narrow card-elevated">
+        <p class="card-kicker">Join the community</p>
+        <h1 id="register-title">Create your account</h1>
+        <p class="muted">Student or professor — your data stays in this browser (LocalStorage).</p>
+        <form id="registerForm" class="stack" novalidate>
+          <div class="field">
+            <label for="regName">Full name</label>
+            <input type="text" id="regName" name="name" autocomplete="name" required minlength="2" />
+          </div>
+          <div class="field">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" name="password" autocomplete="new-password" required minlength="6" />
+          </div>
+          <fieldset class="field">
+            <legend>Account type</legend>
+            <div class="radio-row">
+              <label class="radio-label"><input type="radio" name="role" value="student" checked /> Student</label>
+              <label class="radio-label"><input type="radio" name="role" value="professor" /> Professor</label>
+            </div>
+          </fieldset>
+          <p class="form-error hidden" id="registerError" role="alert"></p>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        </form>
+        <p class="muted small">Already have an account? <a href="#" data-nav="login">Sign in</a></p>
+      </div>
+    </section>
+
+    <!-- Upload summaries: PDF / DOCX + metadata -->
+    <section id="page-upload" class="page hidden" aria-labelledby="upload-title">
+      <div class="card card-wide card-elevated">
+        <p class="card-kicker">Share your notes</p>
+        <h1 id="upload-title">Upload a summary</h1>
+        <p class="muted">PDF or Word (.doc, .docx). Choose a major and year folder so others can find your file. Large files may hit browser storage limits.</p>
+        <form id="uploadForm" class="stack" enctype="multipart/form-data" novalidate>
+          <div class="field">
+            <label for="upTitle">Title</label>
+            <input type="text" id="upTitle" required placeholder="e.g. Midterm review — Organic Chemistry" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="upMajor">Major (folder)</label>
+              <select id="upMajor" required aria-label="Major"></select>
+            </div>
+            <div class="field">
+              <label for="upYear">Year (folder)</label>
+              <select id="upYear" required aria-label="Year"></select>
+            </div>
+          </div>
+          <div class="add-major-box" id="uploadAddMajorBox">
+            <p class="add-major-label">Major not listed?</p>
+            <div class="add-major-row">
+              <input type="text" id="uploadAddMajorInput" maxlength="80" placeholder="Type a new major name" autocomplete="off" />
+              <button type="button" class="btn btn-secondary" id="uploadAddMajorBtn">Add major</button>
+            </div>
+            <p class="form-error hidden" id="uploadAddMajorError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="upSubject">Subject name</label>
+            <input type="text" id="upSubject" required placeholder="e.g. BIO 201" />
+          </div>
+          <div class="field">
+            <label for="upDesc">Short description</label>
+            <textarea id="upDesc" rows="3" placeholder="What does this summary cover?"></textarea>
+          </div>
+          <div class="field">
+            <span class="field-label-text">File (PDF or DOCX)</span>
+            <label class="file-drop" for="upFile">
+              <input type="file" id="upFile" class="file-drop-input" accept=".pdf,.doc,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword" required />
+              <span class="file-drop-ui">
+                <span class="file-drop-title">Drop a file here or click to browse</span>
+                <span class="file-drop-hint" id="fileDropHint">No file selected</span>
+              </span>
+            </label>
+          </div>
+          <p class="form-error hidden" id="uploadError" role="alert"></p>
+          <p class="form-success hidden" id="uploadSuccess" role="status"></p>
+          <button type="submit" class="btn btn-primary btn-block">Save to library</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Browse: majors → years → summaries -->
+    <section id="page-browse" class="page hidden" aria-labelledby="browse-title">
+      <div class="browse-head">
+        <div class="browse-intro">
+          <p class="card-kicker browse-kicker">Library</p>
+          <h1 id="browse-title">Browse summaries</h1>
+          <p class="muted browse-sub" id="browseSubtext">Open a major folder, then a year, to see summaries — or view everything in one list.</p>
+        </div>
+        <nav class="browse-breadcrumb hidden" id="browseBreadcrumb" aria-label="Folder path"></nav>
+      </div>
+
+      <div id="browseFolderPane" class="browse-folder-pane" aria-live="polite">
+        <h2 class="folder-pane-title" id="browseFolderPaneTitle">Choose a major</h2>
+        <div class="folder-grid" id="browseFolderGrid" role="list"></div>
+        <div class="add-major-box hidden" id="browseAddMajorBox">
+          <p class="add-major-label">Add your own major folder</p>
+          <div class="add-major-row">
+            <input type="text" id="browseAddMajorInput" maxlength="80" placeholder="e.g. Architecture" autocomplete="off" />
+            <button type="button" class="btn btn-primary" id="browseAddMajorBtn">Add major</button>
+          </div>
+          <p class="form-error hidden" id="browseAddMajorError" role="alert"></p>
+        </div>
+        <p class="browse-folder-footer">
+          <button type="button" class="btn btn-secondary" id="browseShowAllBtn">View all summaries</button>
+        </p>
+      </div>
+
+      <div id="browseListPane" class="browse-list-pane hidden">
+        <p class="browse-back-wrap">
+          <button type="button" class="btn btn-ghost hidden" id="browseBackBtn">← Back to folders</button>
+        </p>
+        <div class="browse-controls" id="browseControls">
+          <div class="search-wrap">
+            <label for="searchInput" class="visually-hidden">Search by subject or uploader</label>
+            <input type="search" id="searchInput" class="search-input" placeholder="e.g. BIO 201 or Alex Chen…" autocomplete="off" />
+          </div>
+          <div class="browse-filters">
+            <label class="field-inline">
+              <span class="visually-hidden">Sort order</span>
+              <select id="browseSort" class="select-input" aria-label="Sort summaries">
+                <option value="newest">Newest first</option>
+                <option value="subject">Subject A–Z</option>
+                <option value="oldest">Oldest first</option>
+              </select>
+            </label>
+            <label class="filter-chip">
+              <input type="checkbox" id="browseWeekOnly" />
+              <span>This week only</span>
+            </label>
+          </div>
+        </div>
+        <p class="browse-empty muted hidden" id="browseEmpty">No summaries yet. Upload one to get started.</p>
+        <ul class="summary-list" id="summaryList" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- Profile: stats + edit -->
+    <section id="page-profile" class="page hidden" aria-labelledby="profile-title">
+      <div class="card card-narrow card-elevated">
+        <p class="card-kicker">Account</p>
+        <h1 id="profile-title">Your profile</h1>
+        <div id="profileView" class="profile-view">
+          <dl class="profile-dl">
+            <dt>Name</dt>
+            <dd id="pvName">—</dd>
+            <dt>Email</dt>
+            <dd id="pvEmail">—</dd>
+            <dt>Role</dt>
+            <dd id="pvRole">—</dd>
+            <dt>Summaries uploaded</dt>
+            <dd id="pvCount">0</dd>
+          </dl>
+          <div class="future-milestone" id="futureMilestoneWrap" aria-labelledby="future-ms-title">
+            <h3 class="future-milestone-h" id="future-ms-title">Your future library</h3>
+            <p class="future-milestone-sub muted" id="futureMilestoneLabel">Progress toward your next milestone</p>
+            <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="futureProgressTrack">
+              <div class="progress-fill" id="futureProgressFill"></div>
+            </div>
+            <p class="future-milestone-count">
+              <strong id="futureMilestoneCount">0</strong>
+              <span class="muted"> / </span>
+              <span id="futureMilestoneTarget">3</span>
+              <span class="muted" id="futureMilestoneSuffix"> summaries to next milestone</span>
+            </p>
+          </div>
+          <button type="button" class="btn btn-outline" id="editProfileBtn">Edit profile</button>
+        </div>
+        <form id="profileEditForm" class="stack hidden" novalidate>
+          <div class="field">
+            <label for="pfName">Name</label>
+            <input type="text" id="pfName" required />
+          </div>
+          <div class="field">
+            <label for="pfEmail">Email</label>
+            <input type="email" id="pfEmail" required />
+          </div>
+          <div class="field">
+            <label for="pfPassword">New password (optional)</label>
+            <input type="password" id="pfPassword" autocomplete="new-password" placeholder="Leave blank to keep current" />
+          </div>
+          <p class="form-error hidden" id="profileError" role="alert"></p>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-ghost" id="cancelEditBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="assets/logo-emblem.jpeg" alt="" class="footer-logo" width="160" height="48" decoding="async" />
+      <p class="footer-brand"><strong>Our Future Management</strong> — peer summaries for serious students.</p>
+      <p class="footer-note">Runs in your browser; materials are stored locally on this device.</p>
+    </div>
+  </footer>
+
+  <script src="OurFutureManagement.js" defer></script>
+</body>
+</html>
